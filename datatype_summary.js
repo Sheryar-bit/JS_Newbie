@@ -35,3 +35,30 @@ console.log(typeof MyFunc);
 
 console.log(typeof BigNum);
 //bigint
+
+
+
+//*************************************************************************/
+
+//Stack(Primitive), Heap (Non Primitive)
+
+let myName = 'Muhammad Sheryar';
+let anotherName = myName
+anotherName = 'Muhammad Ali'
+console.log(myName);
+//Muhammad Sheryar
+
+console.log(anotherName);
+//Muhammad Ali
+
+let user1 = {
+    name: 'ALI',
+    Num: '1112'
+}
+
+let user2 = user1
+user2.name = 'Sheryar'
+
+console.log(user1.name);
+console.log(user2.name);
+//both output will give Sheryar
