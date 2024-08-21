@@ -1,6 +1,7 @@
 # JS_Newbie
 
-https://github.com/TheAlgorithms/JavaScript/blob/master/DIRECTORY.md
+![image](https://github.com/user-attachments/assets/d6bc6766-ef84-41c9-8eb0-453faee9296c)
+
 
 # JavaScript Learning Repository
 
