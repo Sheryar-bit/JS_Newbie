@@ -1,5 +1,6 @@
 # JS_Newbie
 
+https://github.com/TheAlgorithms/JavaScript/blob/master/DIRECTORY.md
 
 # JavaScript Learning Repository
 
