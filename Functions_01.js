@@ -81,3 +81,21 @@ function returnSecondValue(getArray) {
 console.log(returnSecondValue(MyArray));
 //Anotherway
 console.log(returnSecondValue([1,2,4,5,6,7]));
+
+function isEven(num) {
+    if(num % 2 == 0) {
+        return console.log(`the number ${num} is Even`)
+    }
+    return console.log(`the number ${num} is Odd`)
+}
+
+isEven(24)
+
+function chkEmail(Email = 'alisharyar93@gmail.com') {
+    if(Email == 'alisharyar93@gmail.com') {
+        return console.log('Email is Correct')
+    }
+    return console.log(`Email is Incorrrect`)
+}
+
+chkEmail('alisharyar93ail.com')
