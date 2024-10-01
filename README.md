@@ -65,6 +65,7 @@ If you have any questions or suggestions, please feel free to reach out to me:
 
 - **Email:** (alisharyar93@gmail.com)
 - **LinkedIn:** (www.linkedin.com/in/httsheryar-ali-53349a219)
+- **Owner:** (@Sheryar-bit)
 
 Thank you for visiting my JavaScript Learning Repository!
 
