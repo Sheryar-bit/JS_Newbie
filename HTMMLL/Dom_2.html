@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body style="background-color: #212121; color: white;">
+    <ul class="language">
+        <li>Javascript</li>
+        <li>Ruby</li>
+        <li>Java</li>
+        <li>Cpp</li>
+    </ul>
+</body>
+
+
+
+<script>
+
+    //adding a new language to our list (we will use Functions)
+    function addlang(langName) {
+        const li = document.createElement('li')
+        li.innerHTML = `${langName}`
+        document.querySelector('.language').appendChild(li)
+    }
+    //in the above approach we have to traverse the whole tree 
+    addlang('Python')
+    addlang('TypeScript')
+
+    //Another Way (Optimized Aproach)
+    function addLang2(langname) {
+        //we create an element
+        const li = document.createElement('li');
+
+        //we append the child in the new nodwe that we created
+        li.appendChild(document.createTextNode(langname))
+
+        //we added the li child to the language query
+        document.querySelector('.language').appendChild(li)
+    }
+    addLang2('NodeJs')
+
+
+
+    //Edit:
+    //1 way 
+    const somelang = document.querySelector('li:nth-child(3)')
+    somelang.textContent = 'kotlin'
+
+
+
+    // 2nd way (good practice)
+    const secondlang = document.querySelector('li:nth-child(1)')
+    const newLI = document.createElement('li')
+    newLI.textContent = 'Swift'
+    secondlang.replaceWith(newLI)
+
+
+    const removelang = document.querySelector('li:last-child')
+    removelang.remove()
+
+
+
+</script>
+</html>
