@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Counter</title>
+</head>
+
+<style>
+    * {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  font-family: Arial, sans-serif;
+  background-color: #f4f4f4;
+}
+
+.counter-container {
+  text-align: center;
+  background-color: #fff;
+  padding: 30px;
+  border-radius: 10px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+#counter {
+  font-size: 4rem;
+  margin-bottom: 20px;
+}
+
+.button-group {
+  display: flex;
+  gap: 10px;
+}
+
+button {
+  padding: 10px 20px;
+  font-size: 1.2rem;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+#decrease {
+  background-color: #f44336;
+  color: white;
+}
+
+#reset {
+  background-color: #ffeb3b;
+  color: black;
+}
+
+#increase {
+  background-color: #4caf50;
+  color: white;
+}
+
+</style>
+
+<body>
+    <div class="counter-container">
+        <h1 id="counter">0</h1>
+        <div class="button-group">
+          <button id="decrease">Decrease</button>
+          <button id="reset">Reset</button>
+          <button id="increase">Increase</button>
+        </div>
+        <h3 style="padding: 10px;">Made By Sheryar</h3>
+      </div>
+</body>
+
+<script>
+    let counter = 0;
+    const btn = document.querySelectorAll('.button-group')
+    const count = document.querySelector('#counter') 
+
+    btn.forEach( function(btn) {
+        btn.addEventListener('click', function(e) {
+            if (e.target.id === 'decrease') {
+                if(counter > 0) {
+                counter--;
+                }
+            }
+            if(e.target.id === 'increase'){
+                counter++;
+            }
+            if(e.target.id === 'reset') {
+                counter = 0;
+            }
+            count.textContent = counter;
+        })
+    })
+
+
+
+    </script>
+</html>
