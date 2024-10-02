@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link rel="stylesheet" type="text/css" href="../styles.css" />
+    <title>Your Local Time</title>
+    <style>
+      body {
+        background-color: #212121;
+        color: #fff;
+      }
+      .center {
+        display: flex;
+        height: 100vh;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+      }
+      #clock {
+        font-size: 40px;
+        background-color: orange;
+        padding: 20px 50px;
+        margin-top: 10px;
+        border-radius: 10px;
+      }
+      #date {
+        font-size: 40px;
+        background-color: orange;
+        padding: 20px 50px;
+        margin-top: 10px;
+        border-radius: 10px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="center">
+        <h1>Made By Sheryar</h1>
+      <div id="banner"><span>local time: </span></div>
+      <div id="clock"></div>
+      <span>Todays Date: </span>
+      <div id="date"></div>
+    </div>
+  </body>
+
+<script>
+    const disp = document.querySelector('#clock');
+    const disp2 = document.getElementById('date')
+    setInterval(function() {
+        let date = new Date()
+        disp.innerHTML = date.toLocaleTimeString();
+        disp2.innerHTML = date.toDateString();
+    }, 1000)
+
+
+    //setInterval in JavaScript is a method that repeatedly executes a specified function at a set time interval (in milliseconds). It continues to run until it is stopped with clearInterval().
+</script>
+
+
+</html>
