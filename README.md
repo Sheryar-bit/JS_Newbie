@@ -49,7 +49,10 @@ Throughout my learning journey, I have used various resources such as:
 
 - [MDN Web Docs - JavaScript](https://developer.mozilla.org/en-US/docs/Web/JavaScript)
 - [JavaScript.info](https://javascript.info/)
-- [Chai aur Code] (https://www.youtube.com/@chaiaurcode)
+- [Chai aur Code](https://www.youtube.com/@chaiaurcode)
+- [FreeCodeCamp](https://www.freecodecamp.org/)
+- [W3Schools](https://www.w3schools.com/js/)
+
 
 These resources have been instrumental in helping me understand and apply JavaScript concepts.
 
@@ -60,7 +63,6 @@ Thorought my learning i will be keep making projects from basic to Advance, you 
 - [DIGITAL CLOCK](https://github.com/Sheryar-bit/JS_Newbie/blob/main/Projects/Digital_clock.html)
 - [COUNTER](https://github.com/Sheryar-bit/JS_Newbie/blob/main/Projects/Counter.html)
 - [GUESS THE NUMBER GAME](https://github.com/Sheryar-bit/JS_Newbie/blob/main/Projects/Guess_Number.html)
-https://github.com/Sheryar-bit/JS_Newbie/tree/main/Projects
 
 ## How to Contribute
 
