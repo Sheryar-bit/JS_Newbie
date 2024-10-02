@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Number Guessing Game</title>
+    <style>
+        html {
+  font-family: sans-serif;
+}
+
+body {
+  width: 300px;
+  max-width: 750px;
+  min-width: 480px;
+  margin: 0 auto;
+  background-color: #212121;
+}
+
+.lastResult {
+  color: white;
+  padding: 7px;
+}
+
+.guesses {
+  color: white;
+  padding: 7px;
+}
+
+button {
+  background-color: #141414;
+  color: #fff;
+  width: 250px;
+  height: 50px;
+  border-radius: 25px;
+  font-size: 30px;
+  border-style: none;
+  margin-top: 30px;
+  /* margin-left: 50px; */
+}
+
+#subt {
+  background-color: #161616;
+  color: #ffffff;
+  width: 200px;
+  height: 50px;
+  border-radius: 10px;
+  font-size: 20px;
+  border-style: none;
+  margin-top: 50px;
+  /* margin-left: 75px; */
+}
+
+#btn {
+  background-color: #161616;
+  color: #ffffff;
+  width: 200px;
+  height: 50px;
+  border-radius: 10px;
+  font-size: 20px;
+  border-style: none;
+  margin-top: 50px;
+  /* margin-left: 75px; */
+
+}
+
+
+#guessField {
+  color: #000;
+  width: 250px;
+  height: 50px;
+  font-size: 30px;
+  border-style: none;
+  margin-top: 25px;
+
+  /* margin-left: 50px; */
+  border: 5px solid #6c6d6d;
+  text-align: center;
+}
+
+#guess {
+  font-size: 55px;
+  /* margin-left: 90px; */
+  margin-top: 120px;
+  color: #fff;
+}
+
+.guesses {
+  background-color: #7a7a7a;
+}
+
+#wrapper {
+  box-sizing: border-box;
+  text-align: center;
+  width: 450px;
+  height: 550px;
+  background-color: #474747;
+  color: #fff;
+  font-size: 25px;
+  border-radius: 20px;
+  height: 640px;
+}
+
+h1 {
+  background-color: #161616;
+
+  color: #fff;
+  text-align: center;
+}
+
+p {
+  font-size: 16px;
+  text-align: center;
+}
+
+
+    </style>
+</head>
+<body style="background-color:#212121; color:#fff;">
+    
+    <div id="wrapper">
+      <h1>Number guessing game</h1>
+      <h3>Made By Muhammad Sheryar</h3>
+    <p>Try and guess a random number between 1 and 100.</p>
+    <p>You have 10 attempts to guess the right number.</p>
+    </br>
+        <form class="form">
+            <label2 for="guessField" id="guess">Guess a number</label>
+            <input type="text" id="guessField" class="guessField">
+            <input type="submit" id="subt" value="Submit guess" class="guessSubmit">
+            <button id="btn"> New Game </button>
+        </form>
+
+        <div class="resultParas">
+            <p >Previous Guesses: <span class="guesses"></span></p>
+            <p >Guesses Remaining: <span class="lastResult">10</span></p>
+            <p class="lowOrHi"></p>
+        </div>
+    </div>
+
+</body>
+
+
+<script>
+    let randomNumber = parseInt(Math.random()*100 + 1);
+    const submit = document.querySelector('#subt');
+    const userInput = document.querySelector('#guessField');
+    const guesSlot = document.querySelector('.guesses');
+    const remainingGuesses = document.querySelector('.lastResult');
+    const butn = document.querySelector('#btn');
+    const lowOrHi = document.querySelector('.lowOrHi');
+    const startOver = document.querySelector('.resultParas');
+    
+    let prevGuess = [];
+    let numofGuess = 1;
+
+    let playGame = true;
+    if(playGame) {
+        submit.addEventListener('click', function(e) {
+            e.preventDefault()
+            const guess = parseInt(userInput.value);
+            validGuess(guess)
+        })
+    }
+
+    function validGuess(guess) {
+        if (isNaN(guess) || guess < 1 || guess > 100) {
+        alert('Please enter valid Input')
+    }
+    else {
+        prevGuess.push(guess)
+        if(numofGuess > 10 ) {
+            CleanUpGuess(guess);
+            displayMsg(`Game Over! The Random Number Was ${randomNumber}`);
+            endGame()
+            } else{
+                CleanUpGuess(guess)
+                checkGuess(guess)
+            }
+        }
+    }
+    
+
+    function checkGuess(guess) {
+        if (guess === randomNumber) {
+            displayMsg(`You Won! The Random Number Was ${randomNumber}`)
+
+        }
+        else if(guess > randomNumber) {
+            displayMsg(`Too High! Try a Lower Number`)
+        }
+        else if(guess < randomNumber) {
+            displayMsg(`Too Low! Try a Higher Number`)
+        }
+        else {
+            displayMsg(`Sorry You Lost! The Random Number Was ${randomNumber}`)
+        }
+    }
+
+    function CleanUpGuess(guess) {
+        userInput.value = ''
+        guesSlot.innerHTML += `${guess}, `
+        numofGuess++;
+        remainingGuesses.innerHTML = `${12 - numofGuess}`
+    }
+
+    function displayMsg(msg) {
+        lowOrHi.innerHTML = `<h2>${msg}</h2>`
+    }
+
+    function endGame(playGame) {
+       userInput.value = '';
+       userInput.setAttribute('disabled', '');
+       let p = document.createElement('p')
+       p.classList.add('button');
+       startOver.appendChild(p)
+       playGame = false;
+       newGame()
+    }
+
+    function newGame() {
+        butn.addEventListener('click', function(e) {
+        randomNumber = parseInt(Math.random()*100 + 1);
+        prevGuess = [];
+        numofGuess = 1;
+        guesSlot.innerHTML = '';
+        remainingGuesses.innerHTML = `${11 - numofGuess}`
+        userInput.removeAttribute('disabled');
+        startOver.removeChild(p);
+        
+        playGame = true;
+        }) 
+    }
+</script>
+
+</html>
