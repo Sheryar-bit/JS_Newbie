@@ -12,7 +12,7 @@ This repository is dedicated to documenting my journey in learning JavaScript, i
 1. [Introduction](#introduction)
 2. [Learning Goals](#learning-goals)
 3. [Structure of the Repository](#structure-of-the-repository)
-4. [Projects and Exercises](#projects-and-exercises)
+4. [Projects and Exercises](#projects)
 5. [Resources](#resources)
 6. [How to Contribute](#how-to-contribute)
 7. [Contact](#contact)
@@ -52,6 +52,15 @@ Throughout my learning journey, I have used various resources such as:
 - [Chai aur Code] (https://www.youtube.com/@chaiaurcode)
 
 These resources have been instrumental in helping me understand and apply JavaScript concepts.
+
+## Projects
+Thorought my learning i will be keep making projects from basic to Advance, you can find the projects below:
+- [COLOR CHANGER](https://github.com/Sheryar-bit/JS_Newbie/blob/main/Projects/colorChanger.html)
+- [BMI CALCULATOR](https://github.com/Sheryar-bit/JS_Newbie/blob/main/Projects/BMI.html)
+- [DIGITAL CLOCK](https://github.com/Sheryar-bit/JS_Newbie/blob/main/Projects/Digital_clock.html)
+- [COUNTER](https://github.com/Sheryar-bit/JS_Newbie/blob/main/Projects/Counter.html)
+- [GUESS THE NUMBER GAME](https://github.com/Sheryar-bit/JS_Newbie/blob/main/Projects/Guess_Number.html)
+https://github.com/Sheryar-bit/JS_Newbie/tree/main/Projects
 
 ## How to Contribute
 
