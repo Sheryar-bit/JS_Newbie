@@ -63,6 +63,7 @@ Thorought my learning i will be keep making projects from basic to Advance, you 
 - [DIGITAL CLOCK](https://github.com/Sheryar-bit/JS_Newbie/blob/main/Projects/Digital_clock.html)
 - [COUNTER](https://github.com/Sheryar-bit/JS_Newbie/blob/main/Projects/Counter.html)
 - [GUESS THE NUMBER GAME](https://github.com/Sheryar-bit/JS_Newbie/blob/main/Projects/Guess_Number.html)
+- [CALCULATOR](https://github.com/Sheryar-bit/JS_Newbie/blob/main/Projects/Calculator.html)
 
 ## How to Contribute
 
