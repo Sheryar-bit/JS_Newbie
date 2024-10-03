@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Events</title>
+</head>
+<body style="background-color: #212121;">
+    <ul id="all">
+        <li>
+            <img width="200px" id="js" src="Screenshot 2024-08-21 213534.png" alt="">
+        </li>
+        <li>
+            <img width="200px" id="vs" src="Screenshot 2024-08-13 151942.png" alt="">
+        </li>
+    </ul>
+    
+</body>
+<script>
+    // some imp events
+        //type, timestamp, defaultPrevented
+        //target, toElement, srcElement, currentTarget
+        //clientX, clientY, screenX, screenY
+        //altkey, ctrlkey, shiftkey, keycode
+
+
+        //bubbling Up( first js clicked will be printed amd then clicked inside the ul )
+    // document.getElementById('all').addEventListener('click', function(e) {
+    //     console.log(' clicked inside the ul');
+    // }, false)
+
+    // document.getElementById('js').addEventListener('click', function(e) {
+    //     console.log(' JS Clicked');
+    //     e.stopPropagation();
+    // }, false)
+
+    // document.getElementById('vs').addEventListener('click', function(e) {
+    //     console.log("VS CLICKED");
+    //     e.stopPropagation();
+    //     e.preventDefault();
+    // }, false)
+
+
+    //some Excersices
+    // 1- when clicked on the img it gets vanished
+    document.querySelector('#all').addEventListener('click', function(e) {
+    console.log(e.target);
+    if(e.target.id === 'js') {
+        e.target.remove();
+    }  
+    else if(e.target.id === 'vs') {
+        e.target.remove();
+    } 
+    }, false)
+
+
+
+//Mdn doc on addEventListener
+//https://developer.mozilla.org/en-US/docs/Web/API/EventTarget/addEventListener
+
+
+</script>
+</html>
