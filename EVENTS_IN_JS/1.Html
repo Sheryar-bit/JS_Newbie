@@ -25,20 +25,20 @@
 
 
         //bubbling Up( first js clicked will be printed amd then clicked inside the ul )
-    // document.getElementById('all').addEventListener('click', function(e) {
-    //     console.log(' clicked inside the ul');
-    // }, false)
+    document.getElementById('all').addEventListener('click', function(e) {
+        console.log(' clicked inside the ul');
+    }, false)
 
-    // document.getElementById('js').addEventListener('click', function(e) {
-    //     console.log(' JS Clicked');
-    //     e.stopPropagation();
-    // }, false)
+    document.getElementById('js').addEventListener('click', function(e) {
+        console.log(' JS Clicked');
+        e.stopPropagation();
+    }, false)
 
-    // document.getElementById('vs').addEventListener('click', function(e) {
-    //     console.log("VS CLICKED");
-    //     e.stopPropagation();
-    //     e.preventDefault();
-    // }, false)
+    document.getElementById('vs').addEventListener('click', function(e) {
+        console.log("VS CLICKED");
+        e.stopPropagation();
+        e.preventDefault();
+    }, false)
 
 
     //some Excersices
