@@ -64,6 +64,7 @@ Thorought my learning i will be keep making projects from basic to Advance, you 
 - [COUNTER](https://github.com/Sheryar-bit/JS_Newbie/blob/main/Projects/Counter.html)
 - [GUESS THE NUMBER GAME](https://github.com/Sheryar-bit/JS_Newbie/blob/main/Projects/Guess_Number.html)
 - [CALCULATOR](https://github.com/Sheryar-bit/JS_Newbie/blob/main/Projects/Calculator.html)
+- [UNLIMITED COLORS](https://github.com/Sheryar-bit/JS_Newbie/blob/main/Projects/BackgroundChanger.html)
 
 ## How to Contribute
 
@@ -77,7 +78,7 @@ If you have any questions or suggestions, please feel free to reach out to me:
 
 - **Email:** (alisharyar93@gmail.com)
 - **LinkedIn:** (www.linkedin.com/in/httsheryar-ali-53349a219)
-- **Owner:** (@Sheryar-bit)
+- **Owner:** (https://github.com/Sheryar-bit)
 
 Thank you for visiting my JavaScript Learning Repository!
 
