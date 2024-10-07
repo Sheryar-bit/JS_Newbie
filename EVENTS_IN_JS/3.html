@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Async</h1>
+    <button type="button" id="stop">Stop</button>
+</body>
+<script>
+    const SayMyname = function() {
+        console.log('muhammad Sheryar');    
+    }
+   const change = function() {
+    document.querySelector('h1').innerHTML = 'Learning JS'
+   }
+
+    const changeMe = setTimeout(change, 2000)
+    setTimeout(SayMyname, 2000)
+
+    // The event will be stoped by pressing the stop btn
+    //it will not change its innerHTML
+    document.getElementById('stop').addEventListener('click', function() {
+        clearTimeout(changeMe);
+        console.log('stopped');
+    })
+
+
+</script>
+</html>

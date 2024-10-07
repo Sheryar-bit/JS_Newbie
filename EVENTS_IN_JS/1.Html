@@ -5,6 +5,50 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Events</title>
 </head>
+<style>
+    * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    font-family: Arial, sans-serif;
+}
+
+#gameArea {
+    width: 500px;
+    height: 500px;
+    border: 2px solid black;
+    position: relative;
+    overflow: hidden; /* Ensures the character stays inside the game area */
+}
+
+#character {
+    width: 50px;
+    height: 50px;
+    background-color: red;
+    position: absolute;
+    top: 0; /* Initial position */
+    left: 0; /* Initial position */
+}
+
+    .box {
+        margin-top: 100px;
+        background-color: white;
+        width: 100px;
+        height: 100px;
+        box-sizing: border-box;
+        border-radius: 5px;
+    }
+
+    
+</style>
 <body style="background-color: #212121;">
     <ul id="all">
         <li>
@@ -15,6 +59,16 @@
         </li>
     </ul>
     
+        <img id="slider" src="Screenshot 2024-08-13 151942.png" alt="Slider Image" width="500" />
+        <button id="1">PREV</button>
+        <button id="2">NEXT</button>
+    <div class="box" id="box">
+        Hover Me
+    </div>
+    <h2>Move the Block with Arrow Keys</h2>
+    <div id="gameArea">
+        <div id="character"></div>
+    </div>
 </body>
 <script>
     // some imp events
@@ -52,6 +106,57 @@
         e.target.remove();
     } 
     }, false)
+
+    //2- div changes its color when hover
+
+    const hover = document.getElementById('box')
+    hover.addEventListener('mouseover', function(e) {
+        if(e.target.id === 'box') {
+            hover.style.background = 'red'
+        }
+    })
+
+    const hover2 = document.getElementById('box') 
+    hover2.addEventListener('mouseout', function(e) {
+        if(e.target.id === 'box') {
+            hover2.style.background = 'white'
+
+        }
+    })
+
+    //3- Img slider
+    const slider = document.getElementById('slider');
+    const btn = document.getElementById('1');
+    const btn2 = document.getElementById('2');   
+
+    btn.addEventListener('click', function(e) {
+
+        slider.src = "Screenshot 2024-08-13 151942.png";
+    })
+
+    btn2.addEventListener('click', function(e){
+        slider.src = "Screenshot 2024-08-21 213534.png";
+
+    })
+
+    const bx = document.getElementById('gameArea');
+    const playing = document.getElementById('character');
+
+    playing.addEventListener('keydown', function(e){
+        if(e.key === 'ArrowRight'){
+            bx.style.right = '100px'
+        }
+        if(e.key.bx === 'ArrowLeft') {
+            bx.style.left = '100px'
+        }
+        if(e.key === 'ArrowDown') {
+            bx.style.down = '100px'
+        }
+        if(e.key === 'Arrowup') {
+            bx.style.up = '100px'
+        }
+    })
+    
 
 
 
