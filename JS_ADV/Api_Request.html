@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width = initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+       .card {
+        width: 500px;
+        height: 600px;
+        box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+        transition: 0.3s;
+      }
+    .container {
+        padding: 2px 16px;
+    }
+</style>
+<body>
+    <div class="card">
+        <img style="width:100%">
+        <div class="container">
+          <h4></h4>
+          <p></p>
+        </div>
+      </div>
+    <button type="button" id="btn">Click Me</button>
+</body>
+
+<script>
+    /* Excersice_01: 
+    fetches data from your GitHub profile using the GitHub API when a button is clicked and then 
+    dynamically updates the page with your profile picture, name, followers, bio, and blog link.*/
+    
+    document.getElementById('btn').addEventListener('click', function() {
+    const requrl = 'https://api.github.com/users/Sheryar-bit'
+    const xhr = new XMLHttpRequest();
+    xhr.open('GET', requrl);
+    xhr.onreadystatechange =function (){
+        console.log(xhr.readyState);
+            const data = JSON.parse(this.responseText);
+            document.querySelector(".card img").setAttribute("src" , `${data.avatar_url}`);
+            document.querySelector("h4").innerHTML = `${data.name} , Followers : ${data.followers}`;
+            document.querySelector("h4").style.fontWeight = `bold`;
+            document.querySelector("p").innerHTML = `${data.bio}  ${data.blog}`  
+    }
+    xhr.send()
+    })
+
+    /*The below code is the basic of fetching data from Api, */
+    const requrl = 'https://api.github.com/users/Sheryar-bit'
+    const xhr = new XMLHttpRequest();
+    xhr.open('GET', requrl);
+    xhr.onreadystatechange =function (){
+        console.log(xhr.readyState);
+            const data = JSON.parse(this.responseText);
+            console.log(data);
+            console.log(data.followers);  
+    }
+    xhr.send()
+</script>
+</html>
