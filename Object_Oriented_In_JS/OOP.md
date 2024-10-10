@@ -11,6 +11,7 @@ In OOP, there are key concepts:
 
 1. **Objects**: Containers for data and functions. Example: a "car" object can have properties like `color` and `model`, and methods like `start()` or `drive()`.
 
+
 2. **Classes**: Blueprints for creating objects. A class defines the structure, and from it, you can create multiple objects with the same properties and methods.
 
 3. **Inheritance**: Allows one class to inherit properties and methods from another, so you can reuse code. Example: A `Truck` class can inherit from a `Vehicle` class.
