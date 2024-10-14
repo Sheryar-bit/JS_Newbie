@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Backend</title>
+</head>
+<body>
+    <button>Button Clicked</button>
+</body>
+
+
+<script>
+
+    /*
+    In simple words, bind() ensures that a 
+    function uses the correct object (this) when it's called.
+    */
+    class react {
+        constructor() {
+            this.library = 'React'
+            this.servar = 'https://localhost:300'
+
+            document
+            .querySelector('button')
+            .addEventListener('click', this.handleClick.bind(this))
+        }
+        handleClick() {
+            console.log("Button Clicked");
+            console.log(this.servar);
+            
+            
+        }
+    }
+
+    const app = new react()
+</script>
+</html>
