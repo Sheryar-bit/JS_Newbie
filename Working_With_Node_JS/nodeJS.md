@@ -54,6 +54,11 @@ In this example:
 ### Summary
 Node.js enables JavaScript to be used beyond the browser, especially in server-side environments, providing scalability, high performance, and access to a vast ecosystem through NPM. This makes it a popular choice for building modern, efficient, and scalable backend applications.
 
+**package.json**: ensures a list of packages with their versions 
+
+**package-lock.json**: ensure detailed of every pacjage installed with version, sub dependencies. Basically it is a detailed version of the package
+
+**nodemon**: Nodemon will save the new changes in the server at the run time and will accept those changes and will restart the server automatically
 
 Made By *Muhammad Sheryar*
 ref: *Google, ChatGpt, Node.JS Documentation*
