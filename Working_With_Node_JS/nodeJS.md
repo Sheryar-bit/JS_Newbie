@@ -60,5 +60,74 @@ Node.js enables JavaScript to be used beyond the browser, especially in server-s
 
 **nodemon**: Nodemon will save the new changes in the server at the run time and will accept those changes and will restart the server automatically
 
+**JSON (JavaScript Object Notation)** is a lightweight data-interchange format that is easy for humans to read and write, and easy for machines to parse and generate. It is commonly used for transmitting data between a server and a web application or between different systems.
+
+### Key Features of JSON:
+1. **Text-based format**: JSON is a plain text format that can be read by humans and machines.
+2. **Lightweight**: It is concise and minimal, which makes it efficient for data transmission.
+3. **Language-independent**: JSON can be used with almost any programming language (e.g., JavaScript, Python, Java, etc.).
+
+### JSON Syntax Rules:
+- Data is organized as **key-value pairs**.
+- Keys are strings enclosed in double quotes.
+- Values can be strings, numbers, objects, arrays, `true`, `false`, or `null`.
+- Data is enclosed in `{}` for objects and `[]` for arrays.
+
+### Example of JSON:
+```json
+{
+  "name": "Muhammad Sheryar",
+  "age": 22,
+  "skills": ["JavaScript", "Python", "Java"],
+  "isBackendDeveloper": true
+}
+```
+
+### Common Use Cases:
+- **APIs**: JSON is often used in RESTful APIs to send and receive data.
+- **Configuration files**: JSON is used for storing application settings.
+- **Data exchange**: JSON is used to exchange data between client-side and server-side applications.
+
+### API (Application Programming Interface):  
+An API is a set of rules and protocols that allows one software application to interact with another. It defines how requests and responses should be made, enabling data exchange and functionality access between systems.
+
+### Endpoint:  
+An endpoint is a specific URL or URI in an API that performs a specific function. It represents a single entry point where the client sends a request to access resources or perform an action on the server.  
+
+#### Example:  
+- API Base URL: `https://api.example.com`  
+- Endpoint for fetching user data: `/users/{id}`  
+
+Complete URL: `https://api.example.com/users/123` (Fetches data for user with ID 123).
+
+**Methods to share data**: GET, POST, PATCH, DELETE
+### **HTTP Methods**:  
+
+1. **GET**:  
+   - **Purpose**: Retrieve data from the server.  
+   - **Example**: Fetch user details.  
+   - **Idempotent**: Yes (same request returns the same response).  
+   - **Example URL**: `GET /users/123`  
+
+2. **POST**:  
+   - **Purpose**: Create new resources on the server.  
+   - **Example**: Add a new user.  
+   - **Idempotent**: No (creates a new resource with each request).  
+   - **Example URL**: `POST /users` (with data in the request body).  
+
+3. **PATCH**:  
+   - **Purpose**: Partially update an existing resource.  
+   - **Example**: Update a user’s email.  
+   - **Idempotent**: Yes (if the same patch is applied multiple times, the result remains the same).  
+   - **Example URL**: `PATCH /users/123` (with updated fields in the body).  
+
+4. **DELETE**:  
+   - **Purpose**: Remove a resource from the server.  
+   - **Example**: Delete a user account.  
+   - **Idempotent**: Yes (deleting the same resource multiple times results in the same outcome).  
+   - **Example URL**: `DELETE /users/123`.  
+
+
+
 Made By *Muhammad Sheryar*
-ref: *Google, ChatGpt, Node.JS Documentation*
+ref: *Google, ChatGpt, Node.JS Documentation, Express.JS Documentation*
