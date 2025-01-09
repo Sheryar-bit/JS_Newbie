@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Backend Data Insertion</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+        h1 {
+            text-align: center;
+        }
+        form {
+            margin: 20px auto;
+            padding: 20px;
+            border: 1px solid #ccc;
+            border-radius: 8px;
+            width: 50%;
+        }
+        form div {
+            margin-bottom: 15px;
+        }
+        form label {
+            display: block;
+            margin-bottom: 5px;
+        }
+        form input, form select, form textarea {
+            width: 100%;
+            padding: 8px;
+            box-sizing: border-box;
+        }
+        form button {
+            padding: 10px 15px;
+            background-color: #28a745;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        form button:hover {
+            background-color: #218838;
+        }
+    </style>
+</head>
+<body>
+    <h1>Insert Data into Database</h1>
+    
+    <!-- MenuItem Form -->
+    <form id="menuItemForm">
+        <h2>Menu Item</h2>
+        <div>
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="name" required>
+        </div>
+        <div>
+            <label for="price">Price:</label>
+            <input type="number" id="price" name="price" required>
+        </div>
+        <div>
+            <label for="taste">Taste:</label>
+            <select id="taste" name="taste" required>
+                <option value="sweet">Sweet</option>
+                <option value="sour">Sour</option>
+                <option value="spicy">Spicy</option>
+            </select>
+        </div>
+        <div>
+            <label for="is_drink">Is Drink:</label>
+            <select id="is_drink" name="is_drink">
+                <option value="true">Yes</option>
+                <option value="false">No</option>
+            </select>
+        </div>
+        <div>
+            <label for="ingredients">Ingredients (comma-separated):</label>
+            <input type="text" id="ingredients" name="ingredients">
+        </div>
+        <button type="button" onclick="submitMenuItem()">Submit</button>
+    </form>
+
+    <!-- Person Form -->
+    <form id="personForm">
+        <h2>Person</h2>
+        <div>
+            <label for="personName">Name:</label>
+            <input type="text" id="personName" name="personName" required>
+        </div>
+        <div>
+            <label for="age">Age:</label>
+            <input type="number" id="age" name="age" required>
+        </div>
+        <div>
+            <label for="address">Address:</label>
+            <textarea id="address" name="address" rows="3"></textarea>
+        </div>
+        <button type="button" onclick="submitPerson()">Submit</button>
+    </form>
+
+    <script>
+        const backendUrl = 'http://localhost:3000'; // Root URL of your backend
+
+// Function to submit MenuItem data
+async function submitMenuItem() {
+    const data = {
+        name: document.getElementById('name').value,
+        price: parseFloat(document.getElementById('price').value),
+        taste: document.getElementById('taste').value,
+        is_drink: document.getElementById('is_drink').value === 'true',
+        ingrediants: document.getElementById('ingredients').value.split(',').map(item => item.trim())
+    };
+
+    try {
+        const response = await fetch(`${backendUrl}/MenuItem`, { // Correct endpoint
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(data)
+        });
+
+        if (response.ok) {
+            const result = await response.json();
+            alert('MenuItem saved successfully!');
+            console.log('Response:', result);
+        } else {
+            const error = await response.json();
+            console.error('Error:', error);
+            alert('Error saving MenuItem');
+        }
+    } catch (error) {
+        console.error('Error:', error);
+        alert('Error saving MenuItem');
+    }
+}
+
+// Function to submit Person data
+async function submitPerson() {
+    const data = {
+        name: document.getElementById('personName').value,
+        age: parseInt(document.getElementById('age').value, 10),
+        address: document.getElementById('address').value
+    };
+
+    try {
+        const response = await fetch(`${backendUrl}/person`, { // Correct endpoint
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(data)
+        });
+
+        if (response.ok) {
+            const result = await response.json();
+            alert('Person saved successfully!');
+            console.log('Response:', result);
+        } else {
+            const error = await response.json();
+            console.error('Error:', error);
+            alert('Error saving Person');
+        }
+    } catch (error) {
+        console.error('Error:', error);
+        alert('Error saving Person');
+    }
+}
+
+    </script>
+</body>
+</html>
