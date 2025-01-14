@@ -2,6 +2,7 @@ const express = require('express')
 const app = express()
 const db2 = require('./db2')
 const cors = require ('cors')
+require('dotenv').config();
 
 app.use(cors({ origin: 'http://127.0.0.1:5500' })); // Allow requests from your frontend, "http://127.0.0.1:5500" = front end port
 
@@ -24,7 +25,8 @@ const MenuItemRoutes = require('./Routes/MenuItemRoutes');
 app.use('/person', PersonRoutes)
 app.use('/menuitem', MenuItemRoutes)
 
+const PORT = process.env.PORT || 3000;
 
-app.listen(3000, function() {
+app.listen(PORT, function() {
     console.log('Server is running on port 3000')
 })
