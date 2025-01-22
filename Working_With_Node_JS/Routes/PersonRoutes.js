@@ -70,5 +70,26 @@ router.put('/:id', async function(req, res) {
     }
 })
 
+//Delete person data
+router.delete('/:id', async function(req, res) {
+    try{
+        const PersonId = req.params.id; //Extracts the id from the URL parameter
+        const Response = await person.findByIdAndDelete(PersonId);
+        if(!Response) {
+            res.status(404).json({ message: "Person Not Found" });
+        }
+        else{
+            console.log('Person Deleted');
+            res.status(200).json(Response);
+        }
+    }
+    catch(err) {
+        console.log(err);
+        res.status(404).json({ error: 'Person Not Found!' });
+    }
+})
+
 // Export the router
 module.exports = router;
+
+
