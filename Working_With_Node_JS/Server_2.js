@@ -3,6 +3,9 @@ const app = express()
 const db2 = require('./db2')
 const cors = require ('cors')
 require('dotenv').config();
+const bodyParser = require('body-parser')
+const passport = require('./Auth');
+
 
 //Import Router files
 const PersonRoutes = require('./Routes/PersonRoutes');
@@ -13,17 +16,24 @@ app.use(cors({ origin: 'http://127.0.0.1:5500' })); // Allow requests from your 
 
 //Middleware function:
 
-const logReq = function(req, res, next) {
-    console.log(`[${new Date().toLocaleString()}] Request Made to : ${req.originalUrl}`)
-    next(); //Moves on next phase
-}
-app.use(logReq)
-app.get('/', logReq ,function(req, res) {
+// const logReq = function(req, res, next) {
+//     console.log(`[${new Date().toLocaleString()}] Request Made to : ${req.originalUrl}`)
+//     next(); //Moves on next phase
+// }
+// app.use(logReq)
+
+//authenticatio:
+app.use(passport.initialize());
+    
+const localAuthMiddleware = passport.authenticate('local', {session: false});
+app.get('/', localAuthMiddleware, function(req, res) {
     res.send('welcome to BBQ TONIGHT')
 })
 
+app.get('/',localAuthMiddleware, function(req, res) {
+    res.send('welcome to BBQ TONIGHT')
+})
 
-const bodyParser = require('body-parser')
 app.use(bodyParser.json())   //req.body
 
 const person = require('./models/person')
