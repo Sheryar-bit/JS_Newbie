@@ -147,4 +147,7 @@ WebSockets are a powerful tool for enabling real-time, bidirectional communicati
 
 ### Ref:
 Deepseek
-Websoket: https://www.npmjs.com/package/socket.io
+
+Websoket https://www.npmjs.com/package/socket.io
+
+Document: https://socket.io/ (must check)
