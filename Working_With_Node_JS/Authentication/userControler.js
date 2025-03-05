@@ -3,6 +3,7 @@ const User = require('../Authentication/user')
 const sessionId = require('../Authentication/auth')
 
 async function handleUserSignUp(req, res) {
+    try {
     const { name, email, password } = req.body;
     await User.create({
         name,
@@ -10,6 +11,9 @@ async function handleUserSignUp(req, res) {
         password
     });
     return res.render('/')
+}catch(error) {
+    console.log("ERROR!" ,error);
+}
 }
 
 async function handleUserlogin(req, res) {
@@ -21,10 +25,10 @@ async function handleUserlogin(req, res) {
         });
         
         //making a session Id/coockie
-        const sessionId = uuidv4();
-        setUser(sessionId, user);
-        res.cookie('uid', sessionId)
-    return res.redirect('/')
+        // const sessionId = uuidv4();
+       const token = setUser(sessionId, user);
+        res.cookie('uid', token)
+        return res.redirect('/')
 }
 
 module.exports = {

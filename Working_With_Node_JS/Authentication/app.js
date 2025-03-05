@@ -4,18 +4,24 @@ const path = require('path')
 const cookieParser = require('cookie-parser');
 const restrictToLoginUserOnly = require('../Authentication/middleware')
 
-const staticroutes = require('../Authentication/Router')
-const userRoute = require('../Authentication/user')
+
+const router = require('../Authentication/Router');
+const userrouter = require('../Authentication/user');
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 
-app.use('/url', restrictToLoginUserOnly, staticroutes)
-app.use('/user', userRoute)
-app.use('/', staticroutes)
+app.set('view engine', 'ejs');
+// app.use(express.static(path.resolve('/views')))
+app.use(express.static(path.join(__dirname, 'views')))
+
+
+app.use('/url', restrictToLoginUserOnly, router)
+app.use('/user', userrouter)
+app.use('/', router)
 
 const PORT = 8000;
-app.listen(() => {
+app.listen(PORT, () => {
     console.log(`Server is running on port ${PORT}`);
 })
